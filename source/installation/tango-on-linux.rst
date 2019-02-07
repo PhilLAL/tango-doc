@@ -1,5 +1,4 @@
-.. How to install Tango on Linux
-
+.. _tango_on_linux:
 Linux
 =======
 
@@ -77,8 +76,8 @@ where :envvar:`${DB_ROOT_PASSWORD}` is your MariaDB database root password you w
 .. code-block:: console
 
     $> echo "tango-common tango-common/tango-host string ${TANGOSERVER}:${TANGOPORT}" | sudo debconf-set-selections\
-       echo 'tango-db tango-db/dbconfig-install boolean true' | sudo debconf-set-selections
-       echo "tango-db tango-db/mysql/admin-pass string ${DB_ROOT_PASSWORD}"  | sudo debconf-set-selections
+       echo 'tango-db tango-db/dbconfig-install boolean true' | sudo debconf-set-selections\
+       echo "tango-db tango-db/mysql/admin-pass string ${DB_ROOT_PASSWORD}"  | sudo debconf-set-selections\
        echo "tango-db tango-db/mysql/app-pass password ${DB_TANGO_PASSWORD}" | sudo debconf-set-selections
 
 where :envvar:`${TANGOSERVER}` is the Tango Host name, 
@@ -120,8 +119,8 @@ To install this binary package do the following:
 
 .. code-block:: console
 
-    sudo apt install --assume-yes wget
-    wget -c https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb
+    sudo apt install --assume-yes wget\
+    wget -c https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb\
     sudo dpkg -i ./libtango-java_9.2.5a-1_all.deb
 
 You will then have the Tango Java tools installed in /usr/bin e.g. /usr/bin/jive
